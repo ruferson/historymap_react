@@ -1,0 +1,17 @@
+{
+    "1": {
+        "position": [0, 0],
+        "description" : "Hola",
+        "type" : "war"
+    },
+    "2": {
+        "position": [10, 20],
+        "description" : "Caca",
+        "type" : "death"
+    },
+    "3": {
+        "position": [-30, 400],
+        "description" : "Huete",
+        "type" : "birth"
+    }
+}
