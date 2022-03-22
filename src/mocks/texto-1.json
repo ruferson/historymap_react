@@ -1,0 +1,14 @@
+{
+    "0": {
+        "titulo" : "<h1>Nacimiento de Hitler</h1>",
+        "html" : "<h2>Hola</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non sollicitudin risus. Maecenas auctor dictum velit ac tempus. Nulla non efficitur erat, vel efficitur leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In sed dui in ante luctus pulvinar in et nibh. Duis sagittis viverra nulla, vel fermentum quam tincidunt id. Maecenas ornare mollis dui nec tristique.</p><img src='https://www.salud180.com/sites/default/files/que_es_la_peste_negra_2.jpg'/><p>Maecenas sit amet ultrices sapien. Integer volutpat urna eget nulla dignissim facilisis et a ante. Curabitur semper, orci at hendrerit mollis, mi diam elementum nisl, bibendum ultrices lorem diam in erat. Vivamus rutrum, felis at fringilla tempus, velit elit tincidunt nunc, in commodo nisl arcu quis neque.</p>"
+    },
+    "1": {
+        "titulo" : "<h1>Peste negra</h1>",
+        "html" : "<h2>Una plaga mortal</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non sollicitudin risus. Maecenas auctor dictum velit ac tempus. Nulla non efficitur erat, vel efficitur leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In sed dui in ante luctus pulvinar in et nibh. Duis sagittis viverra nulla, vel fermentum quam tincidunt id. Maecenas ornare mollis dui nec tristique.</p><img src='https://www.salud180.com/sites/default/files/que_es_la_peste_negra_2.jpg'/><p>Maecenas sit amet ultrices sapien. Integer volutpat urna eget nulla dignissim facilisis et a ante. Curabitur semper, orci at hendrerit mollis, mi diam elementum nisl, bibendum ultrices lorem diam in erat. Vivamus rutrum, felis at fringilla tempus, velit elit tincidunt nunc, in commodo nisl arcu quis neque.</p>"
+    },
+    "2": {
+        "titulo" : "<h1>Muerte de Franco</h1>",
+        "html" : "<h2>Un buen hombre</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non sollicitudin risus. Maecenas auctor dictum velit ac tempus. Nulla non efficitur erat, vel efficitur leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In sed dui in ante luctus pulvinar in et nibh. Duis sagittis viverra nulla, vel fermentum quam tincidunt id. Maecenas ornare mollis dui nec tristique.</p><img src='https://www.salud180.com/sites/default/files/que_es_la_peste_negra_2.jpg'/><p>Maecenas sit amet ultrices sapien. Integer volutpat urna eget nulla dignissim facilisis et a ante. Curabitur semper, orci at hendrerit mollis, mi diam elementum nisl, bibendum ultrices lorem diam in erat. Vivamus rutrum, felis at fringilla tempus, velit elit tincidunt nunc, in commodo nisl arcu quis neque.</p>"
+    }
+}

@@ -1,11 +1,11 @@
 
 import './App.css';
-import Mapa from './components/Mapa';
+import Principal from './Pages/Principal';
 
 function App() {
   return (
     <div className="App">
-      <Mapa></Mapa>
+      <Principal></Principal>
     </div>
   );
 }

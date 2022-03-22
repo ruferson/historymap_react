@@ -1,10 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from 'react-leaflet';
+import React, { useEffect } from 'react';
+import './styles.css'
+import mocktexto from '../../mocks/texto-1.json'
 
 function Evento(props) {
 
+    function ponerTexto() {
+        let texto = mocktexto[props.id].titulo + mocktexto[props.id].html;
+        props.anyadirAlDom(texto, "texto")
+    }
+
+    useEffect(ponerTexto, [props.id])
+
     return (
-            <h1>{props.titulo}</h1>
+        <div id="texto"></div>
     );
 }
 
