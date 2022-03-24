@@ -10,7 +10,11 @@ function Principal() {
     const [eventoID, setEventoID] = useState(1);
 
     function cambiarEvento(event){
-        setEventoID(event.target.options.id);
+        let id = event.target.options.id;
+        if (id>2){
+            id=2;
+        }  
+        setEventoID(id);
     }
 
     function anyadirAlDom(texto, elementoId){
