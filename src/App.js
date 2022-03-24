@@ -1,11 +1,21 @@
 
 import './App.css';
 import Principal from './Pages/Principal';
+import Escribir from './components/Escribir';
+import { Route } from 'wouter';
 
 function App() {
   return (
     <div className="App">
-      <Principal></Principal>
+      <Route  
+          component={Principal}
+          path="/">
+      </Route>
+
+      <Route 
+          component={Escribir}
+          path="/escribir">
+      </Route>
     </div>
   );
 }
