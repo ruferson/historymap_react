@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './styles.css';
-import mockmapa1 from '../mocks/map-1.json';
-import Evento from '../components/Evento';
-import Mapa from '../components/Mapa';
+import mockmapa1 from '../../mocks/map-1.json';
+import Evento from '../../components/Evento';
+import Mapa from '../../components/Mapa';
 
 function Principal() {
 
@@ -25,8 +25,9 @@ function Principal() {
 
     return (
         <div>
+            <h1>VER</h1>
             <div className="mapa">
-                <Mapa cambiarEvento={cambiarEvento}></Mapa>
+                <Mapa cambiarEvento={cambiarEvento} crear={false}></Mapa>
             </div>
             <Evento anyadirAlDom={anyadirAlDom} id={eventoID} titulo={mockmapa1[eventoID].description}></Evento>
         </div>

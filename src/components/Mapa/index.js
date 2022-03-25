@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './styles.css';
-import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from 'react-leaflet';
+import {L} from 'leaflet'
+import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from 'react-leaflet';
 import mockmapa1 from '../../mocks/map-1.json';
 import { popup } from 'leaflet';
 
 function Mapa(props) {
 
-
+    const [creando, setCreando] = useState(props.crear);
     const [myMarkers, setMyMarkers] = useState([])
     const [selectedPosition, setSelectedPosition] = useState("hola");
 
@@ -17,6 +18,11 @@ function Mapa(props) {
         console.log("añadimos")
     }
     useEffect(aniadirMarcador, [selectedPosition])
+
+    function cambiarCreando(){
+        setCreando(props.crear)
+    }
+    useEffect(cambiarCreando, [props.crear])
 
     function ponerMarcadores() {
         let marcadores=[];
@@ -29,13 +35,15 @@ function Mapa(props) {
     useEffect(ponerMarcadores, []);
 
     const Markers = () => {
-
         const map = useMapEvents({
-            click(e) {                                
-                setSelectedPosition([
-                    e.latlng.lat,
-                    e.latlng.lng
-                ]);
+            click(e) {      
+                if (creando){                          
+                    setSelectedPosition([
+                        e.latlng.lat,
+                        e.latlng.lng
+                    ]);
+                    props.setCrear(false);
+                }
             },          
         })
         
