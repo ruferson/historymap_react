@@ -9,9 +9,6 @@ function User() {
 
     const [location, setLocation] = useLocation();
     const [modo, setModo] = useState("misMapas");
-
-
-    localStorage.setItem("userData", JSON.stringify({ "name":"ruben", "edad":"19", "isLogged":true}));
    
     if (!JSON.parse(localStorage.getItem("userData")).isLogged){
         setLocation("/session")
@@ -27,17 +24,35 @@ function User() {
         }
     }
 
+    function serAlumno(){
+        localStorage.setItem("userData", JSON.stringify({ "name":"Rubén", "edad":"19", "rol": "alumno", "isLogged":true}));
+    }
+
+    function serProfesor(){
+        localStorage.setItem("userData", JSON.stringify({ "name":"Rubén", "edad":"19", "rol": "profesor", "isLogged":true}));
+    }
+
     return (
         <div className="wrapper">
-            <div className="wrapper container p-3 my-3 bg-dark text-white">
+            <div className="container p-3 my-3 bg-dark text-white">
                 <h1>Panel de Control <Button className="float-right btn-warning" onClick={()=>{setLocation("/")}}>Inicio</Button></h1>
             </div>
-            <div>
-                <p>¡Bienvenido, {JSON.parse(localStorage.getItem("userData")).name}!</p>
-                <Button onClick={()=>setModo("misMapas")}>Mis Mapas</Button>
-                <Button onClick={()=>setModo("configUsuario")}>Configuración de Usuario</Button>
-                {segunModo()}
+            <Button onClick={serAlumno}>Ser alumno</Button>
+            <Button onClick={serProfesor}>Ser profesor</Button>
+            <div className="row">
+                <div className="col-12">
+                    <p>¡Bienvenido, {JSON.parse(localStorage.getItem("userData")).name}!</p>
+                </div>
+                <div className="ml-3">
+                    <Button onClick={()=>setModo("misMapas")}>Mis Mapas</Button>
+                </div>
+                <div className="ml-3">
+                    <Button onClick={()=>setModo("configUsuario")}>Configuración de Usuario</Button>
+                </div>
+                <div className="col-6" />
             </div>
+                <br /><br />
+                {segunModo()}
         </div>
     );
 }

@@ -43,13 +43,13 @@ function Escribir(props) {
     }
 
     return (
-        <>
+        <div>
             <RichTextEditor toolbarConfig={toolbarConfig}
                 value={state}
                 onChange={onChange}
-            />
-            <Button onClick={enviarHTML}>Enviar</Button>
-        </>
+            /><br/>
+            <Button  className="btn-success" onClick={enviarHTML}>Enviar</Button>
+        </div>
     );
     
   }

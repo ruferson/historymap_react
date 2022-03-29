@@ -14,6 +14,7 @@ function ConfigUsuario () {
     return (
         <>
         <h1>Configuración de Usuario</h1>
+        <br />
         <CambiarDatosSesion></CambiarDatosSesion>
         <br></br>
         <Button onClick={()=>action()}>Cerrar sesión</Button>

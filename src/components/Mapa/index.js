@@ -71,6 +71,7 @@ function Mapa(props) {
     const position = [40.193795, -3.851789]
 
     return (
+        <div>
         <MapContainer center={position} zoom={2} >
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -79,6 +80,7 @@ function Mapa(props) {
             <Markers/>
             {mapeoMarcadores()}
         </MapContainer>
+        </div>
     );
 }
 

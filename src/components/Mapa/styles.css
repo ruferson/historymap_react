@@ -27,10 +27,6 @@
 }
 
 .leaflet-container {
-    height: 35vw;
-    width: 55vw;
-}
-
-.mapa {
-    float: left;
+    height: 27vw;
+    width: 59vw;
 }
