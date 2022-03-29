@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import "./styles.css";
-import Login from '../../components/Login'
-import Singup from "../../components/Singup";
+import IniciarSesion from '../../components/IniciarSesion'
+import Registrarse from "../../components/Registrarse";
 
 function Session () {
 
@@ -11,9 +11,9 @@ function Session () {
 
   function sesiones(mode){
       if (mode==="login"){
-          return <Login></Login>
+          return <IniciarSesion></IniciarSesion>
       } else  {
-          return <Singup></Singup>
+          return <Registrarse></Registrarse>
       }
   }
 
