@@ -6,6 +6,7 @@ import "./styles.css";
 function Inicio () {
 
     const [location, setLocation] = useLocation();
+    localStorage.setItem("userData", JSON.stringify({ "name":"Rubén", "edad":"19", "rol": "alumno", "isLogged":true}));
 
 
     return (
