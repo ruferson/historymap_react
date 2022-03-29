@@ -104,52 +104,34 @@ function Singup () {
 
     return (
       <div>
-        <h1>REGISTRARSE
-            <Button
-              className="text-center mb-4"
-              color="success"
-              onClick={()=>setLocation("/login")}
-            >
-              Iniciar sesión
-            </Button>
-            </h1>
+        <h1>REGISTRARSE</h1>
         <Form className="containers shadow">
           <FormGroup>
-            <Label for="name">Name</Label>
+            <Label for="name">Nombre completo: </Label>
             <Input
               type="name"
               name="name"
-              placeholder="Enter name"
+              placeholder="nombre completo"
               value={estado.signupData.name}
               onChange={onChangehandler}
             />
           </FormGroup>
           <FormGroup>
-            <Label for="email">Email id</Label>
+            <Label for="email">E-Mail: </Label>
             <Input
               type="email"
               name="email"
-              placeholder="Enter email"
+              placeholder="correo electrónico"
               value={estado.signupData.email}
               onChange={onChangehandler}
             />
           </FormGroup>
           <FormGroup>
-            <Label for="phone">Phone Number</Label>
-            <Input
-              type="phone"
-              name="phone"
-              placeholder="Enter phone number"
-              value={estado.signupData.phone}
-              onChange={onChangehandler}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="password">Password</Label>
+            <Label for="password">Contraseña: </Label>
             <Input
               type="password"
               name="password"
-              placeholder="Enter password"
+              placeholder="contraseña"
               value={estado.signupData.password}
               onChange={onChangehandler}
             />
@@ -160,7 +142,7 @@ function Singup () {
             color="success"
             onClick={onSubmitHandler}
           >
-            Sign Up
+            Registrarse
             {isLoading ? (
               <span
                 className="spinner-border spinner-border-sm ml-5"

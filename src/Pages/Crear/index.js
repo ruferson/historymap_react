@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './styles.css';
 import Mapa from '../../components/Mapa';
 import Escribir from '../../components/Escribir';
+import { Button } from 'reactstrap';
 
 function Principal() {
 
@@ -51,7 +52,7 @@ function Principal() {
     return (
         <div>
             <h1>CREAR</h1>
-            <button onClick={cambiarCrear}>AÑADIR MARCADOR</button>
+            <Button onClick={cambiarCrear}>AÑADIR MARCADOR</Button>
             <div className="mapa">
                 <Mapa cambiarEvento={cambiarEvento} crear={crear} setCrear={setCrear}></Mapa>
             </div>

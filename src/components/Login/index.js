@@ -144,22 +144,14 @@ function Login () {
 
       return (
         <div>
-            <h1>INICIAR SESION
-            <Button
-              className="text-center mb-4"
-              color="success"
-              onClick={()=>setLocation("/singup")}
-            >
-              Registarse
-            </Button>
-            </h1>
+            <h1>INICIAR SESION</h1>
           <Form className="containers">
             <FormGroup>
-              <Label for="email">Email id</Label>
+              <Label for="email">E-Mail: </Label>
               <Input
                 type="email"
                 name="email"
-                placeholder="Enter email"
+                placeholder="correo electrónico"
                 value={estado.email}
                 onChange={onChangehandler}
               />
@@ -167,11 +159,11 @@ function Login () {
               <span className="text-danger">{estado.errMsgEmail}</span>
             </FormGroup>
             <FormGroup>
-              <Label for="password">Password</Label>
+              <Label for="password">Contraseña: </Label>
               <Input
                 type="password"
                 name="password"
-                placeholder="Enter password"
+                placeholder="contraseña"
                 value={estado.password}
                 onChange={onChangehandler}
               />
@@ -183,7 +175,7 @@ function Login () {
               color="success"
               onClick={onSignInHandler}
             >
-              Sign In
+              Iniciar sesión
               {isLoading ? (
                 <span
                   className="spinner-border spinner-border-sm ml-5"

@@ -2,16 +2,17 @@ import React from 'react';
 import './styles.css';
 import { useLocation } from 'wouter';
 import CerrarSesion from '../../components/CerrarSesion';
+import { Button } from 'reactstrap';
 
 function User() {
 
     const [location, setLocation] = useLocation();
 
 
-    localStorage.setItem("userData", JSON.stringify({ "name":"ruben", "edad":"19", "isLogged":false}));
+    localStorage.setItem("userData", JSON.stringify({ "name":"ruben", "edad":"19", "isLogged":true}));
    
     if (!JSON.parse(localStorage.getItem("userData")).isLogged){
-        setLocation("/login")
+        setLocation("/session")
     }
 
 
@@ -20,8 +21,8 @@ function User() {
             <h1>PANEL DE CONTROL</h1>
             <div>
                 <p>¡Bienvenido, {JSON.parse(localStorage.getItem("userData")).name}! <CerrarSesion/> </p>
-                <button onClick={() => setLocation("/Escribir")}>CREAR</button>
-                <button onClick={() => setLocation("/Ver")}>VER</button>
+                <Button onClick={() => setLocation("/crear")}>CREAR</Button>
+                <Button onClick={() => setLocation("/ver")}>VER</Button>
                 
             </div>
         </div>

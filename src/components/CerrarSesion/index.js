@@ -1,3 +1,4 @@
+import { Button } from "reactstrap";
 import { useLocation } from "wouter";
 
 function CerrarSesion () {
@@ -6,11 +7,11 @@ function CerrarSesion () {
 
     function action() {
         localStorage.setItem('userData', JSON.stringify({"isLogged":false}))
-        setLocation("/login")
+        setLocation("/session")
     }
     
     return (
-        <button onClick={()=>action()}>Cerrar sesión</button>
+        <Button onClick={()=>action()}>Cerrar sesión</Button>
     );
 
    }

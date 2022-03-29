@@ -3,9 +3,8 @@ import './App.css';
 import Ver from './Pages/Ver';
 import Crear from './Pages/Crear';
 import User from './Pages/User';
-import Login from './Pages/Login';
 import { Route } from 'wouter';
-import Singup from './Pages/Singup';
+import Session from './Pages/Session';
 
 function App() {
   return (
@@ -15,21 +14,21 @@ function App() {
           path="/">
       </Route>
       <Route  
-          component={Login}
-          path="/login">
+          component={User}
+          path="/dashboard">
       </Route>
       <Route  
-          component={Singup}
-          path="/singup">
+          component={Session}
+          path="/session">
       </Route>
       <Route  
           component={Ver}
-          path="/Ver">
+          path="/ver">
       </Route>
 
       <Route  
           component={Crear}
-          path="/Escribir">
+          path="/crear">
       </Route>
 
     </div>

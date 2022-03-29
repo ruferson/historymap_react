@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
 import RichTextEditor from 'react-rte';
+import { Button } from 'reactstrap';
 
 function Escribir(props) {
 
@@ -47,7 +48,7 @@ function Escribir(props) {
                 value={state}
                 onChange={onChange}
             />
-            <button onClick={enviarHTML}>Enviar</button>
+            <Button onClick={enviarHTML}>Enviar</Button>
         </>
     );
     
