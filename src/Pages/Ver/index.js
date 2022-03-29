@@ -21,8 +21,6 @@ function Principal() {
         document.getElementById(elementoId).innerHTML=texto;
     }
 
-    const position = [40.193795, -3.851789]
-
     return (
         <div>
             <h1>VER</h1>

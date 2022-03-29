@@ -47,8 +47,6 @@ function Principal() {
         console.log(crear)
     }
 
-    const position = [40.193795, -3.851789]
-
     return (
         <div>
             <h1>CREAR</h1>

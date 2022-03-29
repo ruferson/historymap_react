@@ -10,7 +10,7 @@ function Login () {
     const [location, setLocation] = useLocation();
 
     if (JSON.parse(localStorage.getItem("userData")).isLogged){
-        setLocation("/")
+        setLocation("/dashboard")
     }
 
     const [estado, setEstado] = useState({
@@ -134,17 +134,17 @@ function Login () {
 
   
       if (estado.redirect) {
-        setLocation("/")
+        setLocation("/dashboard")
       }
       const login = localStorage.getItem("isLoggedIn");
       if (login) {
-        setLocation("/")
+        setLocation("/dashboard")
       }
       const isLoading = estado.isLoading;
 
       return (
         <div>
-            <h1>INICIAR SESION</h1>
+            <h1>Iniciar Sesión</h1>
           <Form className="containers">
             <FormGroup>
               <Label for="email">E-Mail: </Label>

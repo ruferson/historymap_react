@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './styles.css';
-import {L} from 'leaflet'
-import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from 'react-leaflet';
+import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from 'react-leaflet';
 import mockmapa1 from '../../mocks/map-1.json';
-import { popup } from 'leaflet';
 
 function Mapa(props) {
 

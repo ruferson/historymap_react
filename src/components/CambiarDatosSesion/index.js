@@ -1,18 +1,11 @@
 import React, { useState } from "react";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Button, Form, Label, Input } from "reactstrap";
 import axios from "axios";
 import "./styles.css";
-import {  useLocation } from "wouter";
 
 function Registrase () {
 
   
-  const [location, setLocation] = useLocation();
-
-  if (JSON.parse(localStorage.getItem("userData")).isLogged){
-    setLocation("/")
-  }
-
   const [msg, setMsg] = useState("")
   const [errorNombre, setErrorNombre] = useState("")
   const [errorEmail, setErrorEmail] = useState("")
@@ -21,6 +14,7 @@ function Registrase () {
 
   function onSubmitHandler (e) {
     e.preventDefault();
+    setMsg("")
     if (validateForm()){
         let nombre=document.getElementById("name").value
         let email=document.getElementById("email").value
@@ -33,9 +27,6 @@ function Registrase () {
         .post("http://google.es", data)
         .then((response) => {
             setMsg(response.data.message);
-            setTimeout(() => {
-                setMsg("");
-            }, 2000);
         });
         console.log(msg)
     } else {
@@ -76,8 +67,6 @@ function Registrase () {
   }
 
   function validateForm(){
-
-    let isOK=true;
 
     let nombre=document.getElementById("name").value
     let email=document.getElementById("email").value

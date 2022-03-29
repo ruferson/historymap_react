@@ -1,11 +1,12 @@
 import { Button } from "reactstrap";
 import { useLocation } from "wouter";
 
-function CerrarSesion () {
+function MisMapas () {
     
     const [location, setLocation] = useLocation();
 
     function action() {
+        setLocation("/nuevomapa")
     }
     
     return (
@@ -17,4 +18,4 @@ function CerrarSesion () {
 
    }
 
-   export default CerrarSesion;
+   export default MisMapas;

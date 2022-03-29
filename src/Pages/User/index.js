@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './styles.css';
 import { useLocation } from 'wouter';
-import CerrarSesion from '../../components/CerrarSesion';
 import { Button } from 'reactstrap';
 import MisMapas from '../../components/MisMapas'
 import ConfigUsuario from '../../components/ConfigUsuario'
@@ -22,17 +21,17 @@ function User() {
         switch (modo) {
             case "misMapas":
                 return <MisMapas />
-                break;
             case "configUsuario":
                 return <ConfigUsuario />
-                break;
             default: break;
         }
     }
 
     return (
         <div className="wrapper">
-            <h1>PANEL DE CONTROL</h1>
+            <div className="wrapper container p-3 my-3 bg-dark text-white">
+                <h1>Panel de Control <Button className="float-right btn-warning" onClick={()=>{setLocation("/")}}>Inicio</Button></h1>
+            </div>
             <div>
                 <p>¡Bienvenido, {JSON.parse(localStorage.getItem("userData")).name}!</p>
                 <Button onClick={()=>setModo("misMapas")}>Mis Mapas</Button>

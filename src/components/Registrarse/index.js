@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Button, Form, Label, Input } from "reactstrap";
 import axios from "axios";
 import "./styles.css";
 import {  useLocation } from "wouter";
@@ -10,7 +10,7 @@ function Registrase ()  {
     const [location, setLocation] = useLocation();
   
     if (JSON.parse(localStorage.getItem("userData")).isLogged){
-      setLocation("/")
+      setLocation("/dashboard")
     }
   
     const [msg, setMsg] = useState("")
@@ -21,6 +21,7 @@ function Registrase ()  {
   
     function onSubmitHandler (e) {
       e.preventDefault();
+      setMsg("")
       if (validateForm()){
           let nombre=document.getElementById("name").value
           let email=document.getElementById("email").value
@@ -33,9 +34,6 @@ function Registrase ()  {
           .post("http://google.es", data)
           .then((response) => {
               setMsg(response.data.message);
-              setTimeout(() => {
-                  setMsg("");
-              }, 2000);
           });
           console.log(msg)
       } else {
@@ -76,9 +74,7 @@ function Registrase ()  {
     }
   
     function validateForm(){
-  
-      let isOK=true;
-  
+   
       let nombre=document.getElementById("name").value
       let email=document.getElementById("email").value
       let contraseña=document.getElementById("password").value
@@ -98,6 +94,7 @@ function Registrase ()  {
   
       return (
         <div>
+            <h1>Registrarse</h1>
           <Form className="containers shadow" method="post" name="formulario" onSubmit={validateForm}>
           <Label for="name">Nombre completo: </Label>
           <Input
@@ -129,7 +126,7 @@ function Registrase ()  {
               color="success"
               onClick={onSubmitHandler}
             >
-              Guardar Cambios
+              Registrarse
             </Button>
           </Form>
         </div>

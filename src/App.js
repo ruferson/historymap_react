@@ -5,12 +5,13 @@ import Crear from './Pages/Crear';
 import User from './Pages/User';
 import { Route } from 'wouter';
 import Session from './Pages/Session';
+import Inicio from './Pages/Inicio';
 
 function App() {
   return (
     <div className="App">
       <Route  
-          component={User}
+          component={Inicio}
           path="/">
       </Route>
       <Route  
