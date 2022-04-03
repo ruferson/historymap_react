@@ -10,6 +10,7 @@ function Crear() {
     const [location, setLocation] = useLocation();
     const [eventoID, setEventoID] = useState(null);
     const [crear, setCrear] = useState(false);
+    const [mapaID, setMapaID] = useState(1)
 
     if (JSON.parse(localStorage.getItem("userData")).rol==="profesor"){
 
@@ -23,27 +24,49 @@ function Crear() {
             setEventoID(id);
         }
 
-        function sendHTML(html){
+        function sendMarcador(x, y){
+            let XHRdelTIPO = new XMLHttpRequest();
+            let url = "enviarHTML";
+        
+            // open a connection
+            XHRdelTIPO.open("POST", url, true);
+
+            // Set the request header i.e. which type of content you are sending
+            XHRdelTIPO.setRequestHeader("Content-Type", "application/json");
+
+            // Converting JSON data to string
+            let data = JSON.stringify({ "x":x, "y":y, "mapa_id": mapaID });
+
+            console.log(data);  
+
+            // Sending data with the request
+            XHRdelTIPO.send(data);
+        }
+
+        function sendHTML(titulo, html, tipo){
             if (eventoID===null){
                 alert("¡NO has selecionnado un marcador!")
+            } else if (html=== null || titulo==="") {
+                alert("¡Has dejado un campo VACÍO!")
             } else {
-                // Creating a XHR object
-                let xhr = new XMLHttpRequest();
-                let url = "https://google.es";
+
+                // Creating a XHRdelHTML object
+                let XHRdelHTML = new XMLHttpRequest();
+                let url = "enviarHTML";
             
                 // open a connection
-                xhr.open("POST", url, true);
+                XHRdelHTML.open("POST", url, true);
 
                 // Set the request header i.e. which type of content you are sending
-                xhr.setRequestHeader("Content-Type", "application/json");
+                XHRdelHTML.setRequestHeader("Content-Type", "application/json");
 
                 // Converting JSON data to string
-                let data = JSON.stringify({ "titulo": "hola", "html": html, "marcador_id": eventoID });
+                let data = JSON.stringify({ "titulo": titulo, "html": html, "tipo": tipo, "marcador_id": eventoID });
 
                 console.log(data);
 
                 // Sending data with the request
-                xhr.send(data);
+                XHRdelHTML.send(data);
             }
         }
 
@@ -60,7 +83,7 @@ function Crear() {
                 <Button className="float-left btn-success" onClick={cambiarCrear}>Añadir Marcador</Button>
                 <br/><br/><br/>
                 <div className="mapa">
-                    <Mapa cambiarEvento={cambiarEvento} crear={crear} setCrear={setCrear}></Mapa>
+                    <Mapa sendMarcador={sendMarcador} cambiarEvento={cambiarEvento} crear={crear} setCrear={setCrear}></Mapa>
                 </div> <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 <div className="escribir">
                     <Escribir sendHTML={sendHTML}></Escribir>

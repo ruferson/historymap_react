@@ -5,7 +5,7 @@ import mocktexto from '../../mocks/texto-1.json'
 function Evento(props) {
 
     function ponerTexto() {
-        let texto = mocktexto[props.id].titulo + mocktexto[props.id].html;
+        let texto = mocktexto.records[props.id].titulo + mocktexto.records[props.id].html;
         props.anyadirAlDom(texto, "texto")
     }
 

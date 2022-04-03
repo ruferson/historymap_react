@@ -24,7 +24,7 @@ function App() {
       </Route>
       <Route  
           component={Ver}
-          path="/ver">
+          path="/ver/:id">
       </Route>
 
       <Route  

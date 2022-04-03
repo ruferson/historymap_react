@@ -1,6 +1,7 @@
 import React, { useState} from 'react';
+import { Dropdown } from 'react-bootstrap';
 import RichTextEditor from 'react-rte';
-import { Button } from 'reactstrap';
+import { Button, Form, Input, Label } from 'reactstrap';
 
 function Escribir(props) {
 
@@ -39,16 +40,36 @@ function Escribir(props) {
       };
   
     function enviarHTML(){
-        props.sendHTML(html)
+        let titulo=document.getElementById("titulo").value
+        let tipo=document.getElementById("tipo").value
+        props.sendHTML(titulo, html, tipo)
     }
 
     return (
         <div>
-            <RichTextEditor toolbarConfig={toolbarConfig}
-                value={state}
-                onChange={onChange}
-            /><br/>
-            <Button  className="btn-success" onClick={enviarHTML}>Enviar</Button>
+            <Form className="" method="post" name="formulario">
+                <Label for="titulo"><h3>Título:</h3></Label>
+                <Input
+                    type="text"
+                    name="titulo"
+                    id="titulo"
+                    placeholder="título"
+                /><br/>
+                <Label for="text"><h3>Texto:</h3></Label>
+                <RichTextEditor toolbarConfig={toolbarConfig}
+                    value={state}
+                    onChange={onChange}
+                /><br/>
+                <label for="tipo"><h3>Tipo:</h3></label> <br/>
+                <select name="tipo" id="tipo">
+                    <option value="war">Guerra</option>
+                    <option value="death">Muerte</option>
+                    <option value="birth">Nacimiento</option>
+                    <option value="discovery">Descubrimiento</option>
+                    <option value="construction">Construcción</option>
+                </select> {/*ponerIconoEvento*/} <br/><br/>
+                <Button  className="btn-success" onClick={enviarHTML}>Enviar</Button>
+            </Form>
         </div>
     );
     

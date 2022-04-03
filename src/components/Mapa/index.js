@@ -2,18 +2,19 @@ import React, { useEffect, useState } from 'react';
 import './styles.css';
 import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from 'react-leaflet';
 import mockmapa1 from '../../mocks/map-1.json';
+import useMarkers from '../../hooks/useMarkers';
 
 function Mapa(props) {
 
     const [creando, setCreando] = useState(props.crear);
     const [myMarkers, setMyMarkers] = useState([])
+    //const [myMarkers, setMyMarkers] = useMarkers(1);
     const [selectedPosition, setSelectedPosition] = useState("hola");
 
     function aniadirMarcador() {
         let marcadores=myMarkers;
-        marcadores.push([selectedPosition, "Hola", "Caracola"])
+        marcadores.push([selectedPosition, "construction"])
         setMyMarkers(marcadores)
-        console.log("añadimos")
     }
     useEffect(aniadirMarcador, [selectedPosition])
 
@@ -24,8 +25,8 @@ function Mapa(props) {
 
     function ponerMarcadores() {
         let marcadores=[];
-        for(let i=0; i<Object.keys(mockmapa1).length;i++){
-            let array = [mockmapa1[i].position, mockmapa1[i].description, mockmapa1[i].type]
+        for(let i=0; i<Object.keys(mockmapa1.records).length;i++){
+            let array = [[mockmapa1.records[i].x, mockmapa1.records[i].y], mockmapa1.records[i].tipo, mockmapa1.records[i].id]
             marcadores.push(array);
         }
         setMyMarkers(marcadores);
@@ -40,6 +41,7 @@ function Mapa(props) {
                         e.latlng.lat,
                         e.latlng.lng
                     ]);
+                    props.sendMarcador(e.latlng.lat, e.latlng.lng)
                     props.setCrear(false);
                 }
             },          
@@ -50,14 +52,11 @@ function Mapa(props) {
 
     function LocationMarker(marcador, key) {
         let position = marcador[0];
-        console.log("mapeando"+position)
         return position === null ? null : (
           <div>
-            <Marker id={key} eventHandlers={{ click: props.cambiarEvento }} key={key} position={position}>
+            <Marker id={marcador[2]} eventHandlers={{ click: props.cambiarEvento }} key={key} position={position}>
                 <Popup>
-                    <h1>{marcador[2]}</h1>
-                    <br></br>
-                    {marcador[1]}
+                    <h3>{marcador[1]}</h3>
                 </Popup>
             </Marker>
           </div>

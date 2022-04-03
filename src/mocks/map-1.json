@@ -1,17 +1,94 @@
 {
-    "0": {
-        "position": [1, 80],
-        "description" : "Hola",
-        "type" : "war"
-    },
-    "1": {
-        "position": [10, 20],
-        "description" : "Caca",
-        "type" : "death"
-    },
-    "2": {
-        "position": [-30, 400],
-        "description" : "Huete",
-        "type" : "birth"
-    }
-}
+    "records": [
+      {
+        "id": 1,
+        "x": -23,
+        "y": 82,
+        "tipo": "ducimus",
+        "mapa_id": 9,
+        "created_at": "2022-04-03 08:33:25",
+        "updated_at": "2022-04-03 08:33:25"
+      },
+      {
+        "id": 2,
+        "x": -3,
+        "y": 32,
+        "tipo": "dolorum",
+        "mapa_id": 10,
+        "created_at": "2022-04-03 08:33:25",
+        "updated_at": "2022-04-03 08:33:25"
+      },
+      {
+        "id": 3,
+        "x": -69,
+        "y": 171,
+        "tipo": "dolore",
+        "mapa_id": 1,
+        "created_at": "2022-04-03 08:33:25",
+        "updated_at": "2022-04-03 08:33:25"
+      },
+      {
+        "id": 4,
+        "x": 36,
+        "y": 125,
+        "tipo": "vitae",
+        "mapa_id": 2,
+        "created_at": "2022-04-03 08:33:25",
+        "updated_at": "2022-04-03 08:33:25"
+      },
+      {
+        "id": 5,
+        "x": -9,
+        "y": -144,
+        "tipo": "unde",
+        "mapa_id": 10,
+        "created_at": "2022-04-03 08:33:25",
+        "updated_at": "2022-04-03 08:33:25"
+      },
+      {
+        "id": 6,
+        "x": 17,
+        "y": -86,
+        "tipo": "exercitationem",
+        "mapa_id": 8,
+        "created_at": "2022-04-03 08:33:25",
+        "updated_at": "2022-04-03 08:33:25"
+      },
+      {
+        "id": 7,
+        "x": -42,
+        "y": -105,
+        "tipo": "a",
+        "mapa_id": 2,
+        "created_at": "2022-04-03 08:33:25",
+        "updated_at": "2022-04-03 08:33:25"
+      },
+      {
+        "id": 8,
+        "x": -44,
+        "y": 189,
+        "tipo": "libero",
+        "mapa_id": 4,
+        "created_at": "2022-04-03 08:33:25",
+        "updated_at": "2022-04-03 08:33:25"
+      },
+      {
+        "id": 9,
+        "x": -70,
+        "y": 29,
+        "tipo": "quibusdam",
+        "mapa_id": 10,
+        "created_at": "2022-04-03 08:33:25",
+        "updated_at": "2022-04-03 08:33:25"
+      },
+      {
+        "id": 10,
+        "x": 56,
+        "y": -49,
+        "tipo": "quia",
+        "mapa_id": 10,
+        "created_at": "2022-04-03 08:33:25",
+        "updated_at": "2022-04-03 08:33:25"
+      }
+    ]
+  }

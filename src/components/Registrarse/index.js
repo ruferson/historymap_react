@@ -30,8 +30,10 @@ function Registrase ()  {
   
           console.log(data);
   
-          axios
-          .post("http://google.es", data)
+          axios.post(
+              "http://google.es",
+              data,
+          )
           .then((response) => {
               setMsg(response.data.message);
           });

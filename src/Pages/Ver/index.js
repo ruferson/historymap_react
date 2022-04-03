@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import './styles.css';
 import mockmapa1 from '../../mocks/map-1.json';
+import mocktexto from '../../mocks/texto-1.json'
 import Evento from '../../components/Evento';
 import Mapa from '../../components/Mapa';
 import { Button } from 'reactstrap';
 import { useLocation } from 'wouter';
 
-function Principal() {
+function Ver(props) {
 
-    //const [id, setID] = useState(props.id);
+    const [mapaID, setMapaID] = useState(props.params.id)
     const [location, setLocation] = useLocation();
     const [eventoID, setEventoID] = useState(1);
 
     function cambiarEvento(event){
         let id = event.target.options.id;
-        if (id>2){
-            id=2;
+        if (id>Object.keys(mocktexto.records).length-1){
+            id=Object.keys(mocktexto.records).length-1;
         }  
         setEventoID(id);
     }
@@ -24,6 +25,8 @@ function Principal() {
         document.getElementById(elementoId).innerHTML=texto;
     }
 
+    console.log(mapaID)
+
     return (
         <div className="wrapper">
             <div className="container p-3 my-3 bg-dark text-white">
@@ -31,10 +34,10 @@ function Principal() {
             </div>
             <div className="">
                 <div className="">
-                    <Mapa cambiarEvento={cambiarEvento} crear={false}></Mapa>
+                    <Mapa cambiarEvento={cambiarEvento} crear={false} id={mapaID}></Mapa>
                 </div> <br/>
                 <div className="">
-                    <Evento anyadirAlDom={anyadirAlDom} id={eventoID} titulo={mockmapa1[eventoID].description}></Evento>
+                    <Evento anyadirAlDom={anyadirAlDom} id={eventoID} titulo={mockmapa1.records[eventoID].description}></Evento>
                 </div>
             </div>
             <br/><br/>
@@ -43,4 +46,4 @@ function Principal() {
     );
 }
 
-export default Principal;
+export default Ver;
