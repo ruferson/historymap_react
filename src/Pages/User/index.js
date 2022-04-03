@@ -25,11 +25,11 @@ function User() {
     }
 
     function serAlumno(){
-        localStorage.setItem("userData", JSON.stringify({ "name":"Rubén", "edad":"19", "rol": "alumno", "isLogged":true}));
+        localStorage.setItem("userData", JSON.stringify({ "name":"Rubén", "edad":"19", "rol": "alumno", "user_id":1, "isLogged":true}));
     }
 
     function serProfesor(){
-        localStorage.setItem("userData", JSON.stringify({ "name":"Rubén", "edad":"19", "rol": "profesor", "isLogged":true}));
+        localStorage.setItem("userData", JSON.stringify({ "name":"Rubén", "edad":"19", "rol": "profesor", "user_id":1,  "isLogged":true}));
     }
 
     return (
