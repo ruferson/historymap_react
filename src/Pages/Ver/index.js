@@ -6,12 +6,16 @@ import Evento from '../../components/Evento';
 import Mapa from '../../components/Mapa';
 import { Button } from 'reactstrap';
 import { useLocation } from 'wouter';
+import Compartir from '../../components/Compartir';
+import useEsPropietario from '../../hooks/useEsPropietario';
 
 function Ver(props) {
 
     const [mapaID, setMapaID] = useState(props.params.id)
     const [location, setLocation] = useLocation();
     const [eventoID, setEventoID] = useState(1);
+    //const [propietario, setPropietario] = useEsPropietario(JSON.parse(localStorage.getItem("userData")).user_id, mapaID)
+    const [propietario, setPropietario] = useState(true)
 
     function cambiarEvento(event){
         let id = event.target.options.id;
@@ -33,6 +37,7 @@ function Ver(props) {
                 <h1>Ver <Button className="float-right btn-warning" onClick={()=>{setLocation("/dashboard")}}>Panel de Control</Button></h1>
             </div>
             <div className="">
+                {propietario && <Compartir></Compartir>}
                 <div className="">
                     <Mapa cambiarEvento={cambiarEvento} crear={false} id={mapaID}></Mapa>
                 </div> <br/>
