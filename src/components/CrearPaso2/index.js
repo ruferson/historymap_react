@@ -10,7 +10,7 @@ function CrearPaso2(props) {
 
     function cambiarEvento(event){
         let id = event.target.options.id;
-        if (id>2){
+        if (!id<2){
             id=2;
         }  
         setEventoID(id);
@@ -60,6 +60,7 @@ function CrearPaso2(props) {
             // Converting JSON data to string
             let data = JSON.stringify({ "titulo": titulo, "html": html, "tipo": tipo, "marcador_id": eventoID });
 
+            console.log(eventoID)
             console.log(data);
 
             // Sending data with the request
@@ -69,10 +70,10 @@ function CrearPaso2(props) {
 
    return (
         <>
-            <Button className="float-left btn-success" onClick={props.cambiarCrear}>Añadir Marcador</Button>
+            <Button className="float-left btn-success" onClick={cambiarCrear}>Añadir Marcador</Button>
             <br/><br/><br/>
             <div className="mapa">
-                <Mapa sendMarcador={sendMarcador} cambiarEvento={props.cambiarEvento} crear={props.crear} setCrear={props.setCrear}></Mapa>
+                <Mapa sendMarcador={sendMarcador} cambiarEvento={cambiarEvento} crear={crear} setCrear={setCrear}></Mapa>
             </div> <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             <div className="escribir">
                 <Escribir sendHTML={sendHTML}></Escribir>

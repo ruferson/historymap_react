@@ -11,7 +11,7 @@ function Crear() {
     const [mapaID, setMapaID] = useState(1)
     const [paso, setPaso] = useState(1);
 
-    if (JSON.parse(localStorage.getItem("userData")).rol==="profesor"){
+    if (localStorage.getItem("userData")!==null && JSON.parse(localStorage.getItem("userData")).rol==="profesor"){
 
         //const [id, setID] = useState(props.id);
         
@@ -43,7 +43,7 @@ function Crear() {
         return (
             <>
             <div className="jumbotron">¡No tienes permiso para entrar aquí!</div>
-            <Button onClick={()=>{setLocation("/dashboard")}}>Volver al Panel de Usuario.</Button>
+            <Button onClick={()=>{setLocation("/")}}>Volver al inicio.</Button>
             </>
         )
     }
