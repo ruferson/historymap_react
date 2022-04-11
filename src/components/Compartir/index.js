@@ -5,7 +5,6 @@ import { Input, Label, Button, Submit} from 'reactstrap';
 function Compartir(props) {
 
     const [show, setShow] = useState(false)
-    //let transporter = nodemailer.createTransport(transport,[defaults]);
 
 
     function validateUsername(name){
@@ -25,7 +24,7 @@ function Compartir(props) {
         }
       }
 
-    function enviarEmail(e){
+    function enviarInvitacion(e){
         e.preventDefault();
         let existe=true;
         let username=document.getElementById("username").value
@@ -42,15 +41,25 @@ function Compartir(props) {
             alert("¡Nombre o e-mail no válido!")
         }
 
+        let idUsu=2
+
         if (existe){
-            let message = {
-                from: "historymap.web@gmail.com",
-                to: username,
-                subject: "¡Te han invitado a ver un mapa en HistoryMap!",
-                text: "¡Has sido invitado para ver el mapa de (CREADOR DEL MAPA), titulado '(TITULO DEL MAPA)'! ¡Haz click en el enlace para verlo! Enlace",
-                html: "<p>¡Has sido invitado para ver el mapa de (CREADOR DEL MAPA), titulado '(TITULO DEL MAPA)'!</p><p>¡Haz click en el enlace para verlo!</p><a source=(ENLACE)>Haz click aquí</a>",
-            }
-            //transporter.sendMail(data, [callback])
+            let XHRdeNOTIFICACION = new XMLHttpRequest();
+            let url = "enviarNotificacion";
+        
+            // open a connection
+            XHRdeNOTIFICACION.open("POST", url, true);
+
+            // Set the request header i.e. which type of content you are sending
+            XHRdeNOTIFICACION.setRequestHeader("Content-Type", "application/json");
+
+            // Converting JSON data to string
+            let data = JSON.stringify({ "type":"invitacion", "description":"¡Has sido invitado al mapa "+props.mapName+"!", "url":"/ver/"+props.id, "idUsu":idUsu});
+
+            console.log(data);  
+
+            // Sending data with the request
+            XHRdeNOTIFICACION.send(data);
         }
 
 
@@ -67,7 +76,7 @@ function Compartir(props) {
                     id="username"
                     placeholder=""
                 /> <br/>
-                <Button className="float-right btn-alert" onClick={enviarEmail}>Enviar invitación</Button>
+                <Button className="float-right btn-alert" onClick={enviarInvitacion}>Enviar invitación</Button>
                 </Form><br/><br/><br/>
             </div>
         )
