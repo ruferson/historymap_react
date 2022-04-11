@@ -3,7 +3,9 @@ import './styles.css';
 import { useLocation } from 'wouter';
 import { Button } from 'reactstrap';
 import MisMapas from '../../components/MisMapas'
+import MisNotificaciones from '../../components/MisNotificaciones'
 import ConfigUsuario from '../../components/ConfigUsuario'
+import { Badge } from 'react-bootstrap';
 
 function User() {
 
@@ -18,6 +20,8 @@ function User() {
         switch (modo) {
             case "misMapas":
                 return <MisMapas />
+            case "invitaciones":
+                return <MisNotificaciones />
             case "configUsuario":
                 return <ConfigUsuario />
             default: break;
@@ -45,6 +49,9 @@ function User() {
                 </div>
                 <div className="ml-3">
                     <Button onClick={()=>setModo("misMapas")}>Mis Mapas</Button>
+                </div>
+                <div className="ml-3">
+                    <Button onClick={()=>setModo("invitaciones")}>Invitaciones <Badge>{/*getInvitaciones*/}1</Badge></Button>
                 </div>
                 <div className="ml-3">
                     <Button onClick={()=>setModo("configUsuario")}>Configuración de Usuario</Button>

@@ -69,10 +69,10 @@ function CrearPaso2(props) {
 
    return (
         <>
-            <Button className="float-left btn-success" onClick={props.cambiarCrear}>Añadir Marcador</Button>
+            <Button className="float-left btn-success" onClick={cambiarCrear}>Añadir Marcador</Button>
             <br/><br/><br/>
             <div className="mapa">
-                <Mapa sendMarcador={sendMarcador} cambiarEvento={props.cambiarEvento} crear={props.crear} setCrear={props.setCrear}></Mapa>
+                <Mapa sendMarcador={sendMarcador} cambiarEvento={cambiarEvento} crear={crear} setCrear={setCrear}></Mapa>
             </div> <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             <div className="escribir">
                 <Escribir sendHTML={sendHTML}></Escribir>

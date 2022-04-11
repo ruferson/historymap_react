@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getEsPropietario } from "../servicios/getMarkers copy";
+import { getEsPropietario } from "../servicios/getEsPropietario";
 
 const useEsPropietario = (usuarioID, mapaID) => {
 
