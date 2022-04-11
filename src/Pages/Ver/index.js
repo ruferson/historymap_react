@@ -12,6 +12,8 @@ import useEsPropietario from '../../hooks/useEsPropietario';
 function Ver(props) {
 
     const [mapaID, setMapaID] = useState(props.params.id)
+    //const [mapName, setMapName] = useMapName(mapaID);
+    const [mapName, setMapName] = useState("Aztecas")
     const [location, setLocation] = useLocation();
     const [eventoID, setEventoID] = useState(1);
     //const [propietario, setPropietario] = useEsPropietario(JSON.parse(localStorage.getItem("userData")).user_id, mapaID)
@@ -37,7 +39,8 @@ function Ver(props) {
                 <h1>Ver <Button className="float-right btn-warning" onClick={()=>{setLocation("/dashboard")}}>Panel de Control</Button></h1>
             </div>
             <div className="">
-                {propietario && <Compartir></Compartir>}
+                {propietario && <Compartir mapName={mapName} mapaID={mapaID}></Compartir>}
+                <h1>{mapName}</h1> <br />
                 <div className="">
                     <Mapa cambiarEvento={cambiarEvento} crear={false} id={mapaID}></Mapa>
                 </div> <br/>

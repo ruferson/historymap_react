@@ -54,7 +54,7 @@ function Compartir(props) {
             XHRdeNOTIFICACION.setRequestHeader("Content-Type", "application/json");
 
             // Converting JSON data to string
-            let data = JSON.stringify({ "type":"invitacion", "description":"¡Has sido invitado al mapa "+props.mapName+"!", "url":"/ver/"+props.id, "idUsu":idUsu});
+            let data = JSON.stringify({ "type":"invitacion", "description":"¡Has sido invitado al mapa "+props.mapName+"!", "url":"/ver/"+props.mapaID, "idUsu":idUsu});
 
             console.log(data);  
 
