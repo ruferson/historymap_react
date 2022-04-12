@@ -29,11 +29,11 @@ function User() {
     }
 
     function serAlumno(){
-        localStorage.setItem("userData", JSON.stringify({ "name":"Rubén", "edad":"19", "rol": "alumno", "user_id":1, "isLogged":true}));
+        localStorage.setItem("userData", JSON.stringify({ "name":"Rubén", "edad":"19", "rol": "alumno", "user_id":1, "isLogged":true, "token": "2|mgpxgVPCgmIs2HWvkfck8bcYD6fZx3AWQElIWVwx"}));
     }
 
     function serProfesor(){
-        localStorage.setItem("userData", JSON.stringify({ "name":"Rubén", "edad":"19", "rol": "profesor", "user_id":1,  "isLogged":true}));
+        localStorage.setItem("userData", JSON.stringify({ "name":"Rubén", "edad":"19", "rol": "profesor", "user_id":1, "isLogged":true, "token": "2|mgpxgVPCgmIs2HWvkfck8bcYD6fZx3AWQElIWVwx"}));
     }
 
     return (

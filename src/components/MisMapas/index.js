@@ -1,11 +1,12 @@
 import { Button } from "reactstrap";
 import { useLocation } from "wouter";
+import useMisMapas from "../../hooks/useMisMapas";
 import MapaClick from "../MapaClick";
 
 function MisMapas () {
     
     const [location, setLocation] = useLocation();
-    //const [listaMapas, setListaMapas] = useMisMapas();
+    //const {listaMapas} = useMisMapas(1);
     let listaMapas = [["img1", "Mapa 1", "Desc 1"], ["img2", "Mapa 2", "Desc 2"], ["img3", "Mapa 3", "Desc 3"], ["img4", "Mapa 4", "Desc 4"]];
 
     function action() {
@@ -17,6 +18,7 @@ function MisMapas () {
     }
 
     function devolverMisMapas(){
+        
         return listaMapas.map(mapearMisMapas)
     }
     
