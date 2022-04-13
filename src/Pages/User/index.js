@@ -6,6 +6,7 @@ import MisMapas from '../../components/MisMapas'
 import MisNotificaciones from '../../components/MisNotificaciones'
 import ConfigUsuario from '../../components/ConfigUsuario'
 import { Badge } from 'react-bootstrap';
+import Footer from '../../components/Footer';
 
 function User() {
 
@@ -36,8 +37,8 @@ function User() {
         localStorage.setItem("userData", JSON.stringify({ "name":"Rubén", "edad":"19", "rol": "profesor", "user_id":1, "isLogged":true, "token": "2|mgpxgVPCgmIs2HWvkfck8bcYD6fZx3AWQElIWVwx"}));
     }
 
-    return (
-        <div className="wrapper">
+    return (<>
+        <div className="pl-4 pr-4 pt-3">
             <div className="container p-3 my-3 bg-dark text-white">
                 <h1>Panel de Control <Button className="float-right btn-warning" onClick={()=>{setLocation("/")}}>Inicio</Button></h1>
             </div>
@@ -61,6 +62,8 @@ function User() {
                 <br /><br />
                 {segunModo()}
         </div>
+        <Footer/>
+        </>
     );
 }
 

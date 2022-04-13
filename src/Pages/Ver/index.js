@@ -8,6 +8,7 @@ import { Button } from 'reactstrap';
 import { useLocation } from 'wouter';
 import Compartir from '../../components/Compartir';
 import useEsPropietario from '../../hooks/useEsPropietario';
+import Footer from '../../components/Footer';
 
 function Ver(props) {
 
@@ -33,8 +34,8 @@ function Ver(props) {
 
     console.log(mapaID)
 
-    return (
-        <div className="wrapper">
+    return (<>
+        <div className="pl-4 pr-4 pt-3">
             <div className="container p-3 my-3 bg-dark text-white">
                 <h1>Ver <Button className="float-right btn-warning" onClick={()=>{setLocation("/dashboard")}}>Panel de Control</Button></h1>
             </div>
@@ -50,6 +51,8 @@ function Ver(props) {
             </div>
             <br/><br/>
         </div>
+        <Footer/>
+        </>
 
     );
 }

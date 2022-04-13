@@ -4,6 +4,7 @@ import "./styles.css";
 import IniciarSesion from '../../components/IniciarSesion'
 import Registrarse from "../../components/Registrarse";
 import { useLocation } from "wouter";
+import Footer from "../../components/Footer";
 
 function Session () {
 
@@ -18,8 +19,8 @@ function Session () {
       }
   }
 
-    return (
-        <div className="wrapper">
+    return (<>
+        <div className="pl-4 pr-4 pt-3">
             <div className="container p-3 my-3 bg-dark text-white">
                 <div className="row">
                     <div className="col-8">
@@ -39,6 +40,8 @@ function Session () {
             </div>           
             {sesiones(modo)}
         </div>
+        <Footer/>
+        </>
     );
   }
 

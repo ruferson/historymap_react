@@ -15,6 +15,9 @@ function Menu(props) {
             case "/dashboard":
                 setSelected(["", "select", "", ""])
                 break;
+            case "/session":
+                setSelected(["", "select", "", ""])
+                break;
             case "/crear":
                 setSelected(["", "", "select", ""])
                 break;

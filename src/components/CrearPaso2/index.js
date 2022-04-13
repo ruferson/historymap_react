@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Mapa from '../Mapa';
 import Escribir from '../Escribir';
 import { Button } from 'reactstrap';
+import Footer from '../Footer';
 
 function CrearPaso2(props) {
 
@@ -70,14 +71,17 @@ function CrearPaso2(props) {
 
    return (
         <>
+        <div className="pl-4 pr-4 pt-3">
             <Button className="float-left btn-success" onClick={cambiarCrear}>Añadir Marcador</Button>
-            <br/><br/><br/>
+           
             <div className="mapa">
                 <Mapa sendMarcador={sendMarcador} cambiarEvento={cambiarEvento} crear={crear} setCrear={setCrear}></Mapa>
-            </div> <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            </div> 
             <div className="escribir">
                 <Escribir sendHTML={sendHTML}></Escribir>
-            </div><br/><br/>
+            </div>
+        </div>
+            <Footer/>
         </>
     );
 }

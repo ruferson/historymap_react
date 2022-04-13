@@ -1,6 +1,7 @@
 import React, {  } from 'react';
 import './styles.css'
 import { Button, Input, Label } from 'reactstrap';
+import Footer from '../Footer';
 
 function CrearPaso1(props) {
 
@@ -30,9 +31,9 @@ function CrearPaso1(props) {
         }
     }
 
-   return (
-        <div className="centrado text-center">
-            <Label for="nombre"><h2>Nombre del mapa:</h2></Label>
+   return (<>
+        <div className="centrado text-center pl-4 pr-4 pt-3 text-white">
+            <Label for="nombre"><h2>Nombre del Mapa:</h2></Label>
                 <Input
                     type="text"
                     name="nombre"
@@ -41,6 +42,10 @@ function CrearPaso1(props) {
                 /> <br/>
             <Button className="float-left btn-success" onClick={sendMapa}>Continuar</Button>
         </div>
+                <div className="footer-abajo">
+                    <Footer/>
+                </div>
+            </>
     );
 }
 

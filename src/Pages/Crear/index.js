@@ -4,6 +4,7 @@ import { Button } from 'reactstrap';
 import { useLocation } from 'wouter';
 import CrearPaso1 from '../../components/CrearPaso1';
 import CrearPaso2 from '../../components/CrearPaso2';
+import Footer from '../../components/Footer';
 
 function Crear() {
 
@@ -31,19 +32,19 @@ function Crear() {
             }
         }
 
-        return (
-            <div className="wrapper">
-                <div className="container p-3 my-3 bg-dark text-white">
-                    <h1>Crear <Button className="float-right btn-warning" onClick={()=>{setLocation("/dashboard")}}>Panel de Control</Button></h1>
-                </div>
-                {segunPasos()}
-            </div>
+        return (<>
+            {segunPasos()}
+            </>
         );
     } else {
-        return (
-            <>
-            <div className="jumbotron">¡No tienes permiso para entrar aquí!</div>
-            <Button onClick={()=>{setLocation("/")}}>Volver al inicio.</Button>
+        return (<>
+            <div className="pl-4 pr-4 pt-3">
+                <div className="jumbotron">¡No tienes permiso para entrar aquí!</div>
+                <Button onClick={()=>{setLocation("/")}}>Volver al inicio.</Button>
+            </div>
+                <div className="footer-abajo">
+                    <Footer/>
+                </div>
             </>
         )
     }

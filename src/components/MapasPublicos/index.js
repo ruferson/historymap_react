@@ -3,7 +3,7 @@ import { useLocation } from "wouter";
 import useMisMapas from "../../hooks/useMisMapas";
 import MapaClick from "../MapaClick";
 
-function MisMapas () {
+function MapasPublicos () {
     
     const [location, setLocation] = useLocation();
     //const {listaMapas} = useMisMapas(1);
@@ -30,14 +30,13 @@ function MisMapas () {
 
     return (
         <>
-        <h1>Mis Mapas</h1><br />
         <div className="row">
             {devolverMisMapas()}
         </div> <br />
-        {puedeCrear()}
+            {puedeCrear()}
         </>
     );
 
    }
 
-   export default MisMapas;
+   export default MapasPublicos;
