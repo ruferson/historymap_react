@@ -34,7 +34,7 @@ function Menu(props) {
             <div className="py-4 px-3 mb-1">
                 <div className="media d-flex align-items-center">
                     <div className="media-body">
-                        <h2 className="m-0 float-right">Menú</h2>
+                        <h1 className="m-0 float-right">Menú</h1>
                     </div>
                 </div>
             </div>
@@ -43,25 +43,25 @@ function Menu(props) {
                 <li className="nav-item border-top" onClick={() => {setLocation("/")}}>
                 <a href="#" className={"nav-link text-white "+selected[0]}>
                             <i className="fa mr-3 fa-fw"></i>
-                            <strong>Mapas</strong>
+                            <strong className="h3">Mapas públicos</strong>
                         </a>
                 </li>
                 <li className="nav-item border-top"  onClick={() => {setLocation("/dashboard")}}>
                 <a href="#" className={"nav-link text-white "+selected[1]}>
                             <i className="fa mr-3 fa-fw"></i>
-                            <strong>Perfil</strong>
+                            <strong className="h3">Perfil</strong>
                         </a>
                 </li>
                 <li className="nav-item border-top" onClick={() => {setLocation("/crear")}}>
                 <a href="#" className={"nav-link text-white "+selected[2]}>
                             <i className="fa mr-3 fa-fw"></i>
-                            <strong>Crear mapa</strong>
+                            <strong className="h3">Crear mapa</strong>
                         </a>
                 </li>
                 <li className="nav-item border-bottom border-top" onClick={() => {setLocation("/config")}}>
                 <a href="#" className={"nav-link text-white "+selected[3]}>
                             <i className="fa mr-3 fa-fw"></i>
-                            <strong>Configuración</strong>
+                            <strong className="h3">Configuración</strong>
                         </a>
                 </li>
             </ul>

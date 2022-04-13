@@ -10,8 +10,9 @@ function Inicio () {
 
 
     return (
-        <div className="wrapper container p-3 my-3 bg-dark text-white">
-            <h1>HistoryMap <Button className="float-right btn-warning" onClick={()=>{setLocation("/dashboard")}}>Panel de control</Button></h1>
+        <div className="text-white">
+            <h1>Mapas públicos</h1>
+            {/**Aquí iría un mapeo de los mapas públicos pero no todos, unos 15 o así. */}
             
         </div>
     );

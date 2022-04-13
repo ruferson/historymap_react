@@ -34,7 +34,7 @@ function MisMapas () {
         <div className="row">
             {devolverMisMapas()}
         </div> <br />
-            {puedeCrear()}
+        {puedeCrear()}
         </>
     );
 
