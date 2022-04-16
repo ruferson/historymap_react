@@ -9,6 +9,7 @@ import Inicio from './Pages/Inicio';
 import Menu from './components/Menu';
 import {  useState } from 'react';
 import Cabezera from './components/Cabezera';
+import MisMapas from './Pages/MisMapas';
 
 
 function App() {
@@ -26,8 +27,12 @@ function App() {
             path="/">
         </Route>
         <Route  
+            component={MisMapas}
+            path="/misMapas">
+        </Route>
+        <Route  
             component={User}
-            path="/dashboard">
+            path="/perfil">
         </Route>
         <Route  
             component={Session}

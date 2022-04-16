@@ -1,7 +1,8 @@
 import { Button } from "reactstrap";
 import { useLocation } from "wouter";
 import useMisMapas from "../../hooks/useMisMapas";
-import MapaClick from "../MapaClick";
+import MapaClick from "../../components/MapaClick";
+import Footer from "../../components/Footer";
 
 function MisMapas () {
     
@@ -28,13 +29,15 @@ function MisMapas () {
         }
     }
 
-    return (
-        <>
-        <h1>Mis Mapas</h1><br />
+    return (<>
+        <div className="pr-4 pl-4 pt-4">
+        <h1 className="text-white">Mis Mapas</h1><br />
         <div className="row">
             {devolverMisMapas()}
         </div> <br />
-            {puedeCrear()}
+            {puedeCrear()} 
+        </div>
+        <div className="footer-abajo"><Footer /></div>
         </>
     );
 

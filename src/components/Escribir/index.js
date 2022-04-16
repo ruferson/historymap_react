@@ -1,5 +1,4 @@
 import React, { useState} from 'react';
-import { Dropdown } from 'react-bootstrap';
 import RichTextEditor from 'react-rte';
 import { Button, Form, Input, Label } from 'reactstrap';
 

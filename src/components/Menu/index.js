@@ -12,17 +12,17 @@ function Menu(props) {
             case "/":
                 setSelected(["select", "", "", ""])
                 break;
-            case "/dashboard":
+            case "/misMapas":
                 setSelected(["", "select", "", ""])
                 break;
-            case "/session":
-                setSelected(["", "select", "", ""])
-                break;
-            case "/crear":
+            case "/perfil":
                 setSelected(["", "", "select", ""])
                 break;
-            case "/config":
-                setSelected(["","","", "select"])
+            case "/session":
+                setSelected(["", "", "select", ""])
+                break;
+            case "/crear":
+                setSelected(["", "", "", "select"])
                 break;
             default:
                 setSelected(["select", "", "", ""])
@@ -46,25 +46,25 @@ function Menu(props) {
                 <li className="nav-item border-top" onClick={() => {setLocation("/")}}>
                 <a href="#" className={"nav-link text-white "+selected[0]}>
                             <i className="fa mr-3 fa-fw"></i>
-                            <strong className="h3">Mapas públicos</strong>
+                            <strong className="h3">Mapas Públicos</strong>
                         </a>
                 </li>
-                <li className="nav-item border-top"  onClick={() => {setLocation("/dashboard")}}>
+                <li className="nav-item border-top" onClick={() => {setLocation("/misMapas")}}>
                 <a href="#" className={"nav-link text-white "+selected[1]}>
+                            <i className="fa mr-3 fa-fw"></i>
+                            <strong className="h3">Mis Mapas</strong>
+                        </a>
+                </li>
+                <li className="nav-item border-top"  onClick={() => {setLocation("/perfil")}}>
+                <a href="#" className={"nav-link text-white "+selected[2]}>
                             <i className="fa mr-3 fa-fw"></i>
                             <strong className="h3">Perfil</strong>
                         </a>
                 </li>
-                <li className="nav-item border-top" onClick={() => {setLocation("/crear")}}>
-                <a href="#" className={"nav-link text-white "+selected[2]}>
-                            <i className="fa mr-3 fa-fw"></i>
-                            <strong className="h3">Crear mapa</strong>
-                        </a>
-                </li>
-                <li className="nav-item border-bottom border-top" onClick={() => {setLocation("/config")}}>
+                <li className="nav-item border-top border-bottom" onClick={() => {setLocation("/crear")}}>
                 <a href="#" className={"nav-link text-white "+selected[3]}>
                             <i className="fa mr-3 fa-fw"></i>
-                            <strong className="h3">Configuración</strong>
+                            <strong className="h3">Crear mapa</strong>
                         </a>
                 </li>
             </ul>

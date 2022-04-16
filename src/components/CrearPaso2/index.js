@@ -70,19 +70,19 @@ function CrearPaso2(props) {
     }
 
    return (
-        <>
-        <div className="pl-4 pr-4 pt-3">
-            <Button className="float-left btn-success" onClick={cambiarCrear}>Añadir Marcador</Button>
-           
-            <div className="mapa">
+        <div className="row">
+        <div className="col-12 pl-4 pr-4 pt-3">
+            <Button className="float-left btn-success mr-5" onClick={cambiarCrear}>Añadir Marcador</Button>
+            
+            <div className="">
                 <Mapa sendMarcador={sendMarcador} cambiarEvento={cambiarEvento} crear={crear} setCrear={setCrear}></Mapa>
             </div> 
-            <div className="escribir">
+            <div className="">
                 <Escribir sendHTML={sendHTML}></Escribir>
-            </div>
+            </div><br/><br/>
         </div>
             <Footer/>
-        </>
+        </div>
     );
 }
 

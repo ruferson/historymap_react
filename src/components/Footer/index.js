@@ -11,7 +11,7 @@ function Footer (props) {
     
 
     return (
-        <div className="footer">
+        <div className="footer mt-5">
             <h4 className="pt-4 text-center">Footer</h4>
         </div>
     );

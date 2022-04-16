@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './styles.css';
 import { useLocation } from 'wouter';
 import { Button } from 'reactstrap';
-import MisMapas from '../../components/MisMapas'
 import MisNotificaciones from '../../components/MisNotificaciones'
 import ConfigUsuario from '../../components/ConfigUsuario'
 import { Badge } from 'react-bootstrap';
@@ -11,7 +10,7 @@ import Footer from '../../components/Footer';
 function User() {
 
     const [location, setLocation] = useLocation();
-    const [modo, setModo] = useState("misMapas");
+    const [modo, setModo] = useState("invitaciones");
    
     if (!JSON.parse(localStorage.getItem("userData")).isLogged){
         setLocation("/session")
@@ -19,8 +18,6 @@ function User() {
 
     function segunModo(){
         switch (modo) {
-            case "misMapas":
-                return <MisMapas />
             case "invitaciones":
                 return <MisNotificaciones />
             case "configUsuario":
@@ -47,9 +44,6 @@ function User() {
             <div className="row">
                 <div className="col-12">
                     <p>¡Bienvenido, {JSON.parse(localStorage.getItem("userData")).name}!</p>
-                </div>
-                <div className="ml-3">
-                    <Button onClick={()=>setModo("misMapas")}>Mis Mapas</Button>
                 </div>
                 <div className="ml-3">
                     <Button onClick={()=>setModo("invitaciones")}>Invitaciones <Badge>{/*getInvitaciones*/}1</Badge></Button>
