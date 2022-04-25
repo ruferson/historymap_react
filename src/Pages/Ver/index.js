@@ -36,20 +36,17 @@ function Ver(props) {
 
     return (<>
         <div className="pl-4 pr-4 pt-3">
-            <div className="container p-3 my-3 bg-dark text-white">
-                <h1>Ver <Button className="float-right btn-warning" onClick={()=>{setLocation("/dashboard")}}>Panel de Control</Button></h1>
-            </div>
             <div className="">
                 {propietario && <Compartir mapName={mapName} mapaID={mapaID}></Compartir>}
                 <h1>{mapName}</h1> <br />
                 <div className="">
                     <Mapa cambiarEvento={cambiarEvento} crear={false} id={mapaID}></Mapa>
                 </div> <br/>
-                <div className="">
+                <div className="white-text">
                     <Evento anyadirAlDom={anyadirAlDom} id={eventoID} titulo={mockmapa1.records[eventoID].description}></Evento>
                 </div>
             </div>
-            <br/><br/>
+            <br/>
         </div>
         <Footer/>
         </>

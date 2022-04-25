@@ -1,6 +1,7 @@
 import { Button } from "reactstrap";
 import { useLocation } from "wouter";
 import CambiarDatosSesion from '../CambiarDatosSesion'
+import './styles.css'
 
 function ConfigUsuario () {
     
@@ -12,13 +13,11 @@ function ConfigUsuario () {
     }
     
     return (
-        <>
-        <h1>Configuración de Usuario</h1>
-        <br />
-        <CambiarDatosSesion></CambiarDatosSesion>
-        <br></br>
-        <Button onClick={()=>action()}>Cerrar sesión</Button>
-        </>
+        <div className="config">
+            <h1>Configuración de Usuario</h1><br/>
+            <CambiarDatosSesion></CambiarDatosSesion><br/>
+            <Button onClick={()=>action()}>Cerrar sesión</Button>
+        </div>
     );
 
    }

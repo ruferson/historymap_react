@@ -1,11 +1,9 @@
 .fondo {
-    height: 100vh;
+    min-height: 100vh;
     background: #56A3A6;
 }
 
-.select {
-    background: #d6a680;
-}
+
 
 .cabezera {
     background: #C2E7D9;

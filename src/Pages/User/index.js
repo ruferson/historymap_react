@@ -36,9 +36,6 @@ function User() {
 
     return (<>
         <div className="pl-4 pr-4 pt-3">
-            <div className="container p-3 my-3 bg-dark text-white">
-                <h1>Panel de Control <Button className="float-right btn-warning" onClick={()=>{setLocation("/")}}>Inicio</Button></h1>
-            </div>
             <Button onClick={serAlumno}>Ser alumno</Button>
             <Button onClick={serProfesor}>Ser profesor</Button>
             <div className="row">
@@ -53,7 +50,6 @@ function User() {
                 </div>
                 <div className="col-6" />
             </div>
-                <br /><br />
                 {segunModo()}
         </div>
         <Footer/>

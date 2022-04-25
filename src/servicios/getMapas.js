@@ -6,10 +6,9 @@ export function getMapas (userID) { //Con este servicio obtendremos un solo coct
   //Usamos la ID pasada por parámetro.
 
   return fetch(apiURL, {
-    mode: 'no-cors',
     method: 'GET',
     headers: {
-      'Authorization': 'Bearer 2|mgpxgVPCgmIs2HWvkfck8bcYD6fZx3AWQElIWVwx',
+      'Authorization': 'Bearer 4|qPEXqsDDA76ZTci3zNg7EiXwPmvDXqWvVwl5fEvz',
       'Content-Type': 'application/json'
     }
   })

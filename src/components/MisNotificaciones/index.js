@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation } from 'wouter';
 import useNotifiaciones from '../../hooks/useNotifiaciones';
 import Notificacion from '../Notificacion';
+import './styles.css'
 
 function MisNotificaciones() {
 
@@ -23,12 +24,12 @@ function MisNotificaciones() {
     }
 
     return (
-        <>
-        <h1>Mis Notificaciones</h1><br />
-        <div className="row">
-            {devolverMisNotificaciones()}
-        </div> 
-        </>
+        <div className="notificaciones">
+            <h1>Mis Notificaciones</h1><br />
+            <div className="row">
+                {devolverMisNotificaciones()}
+            </div> 
+        </div>
     );
 }
 

@@ -25,7 +25,7 @@ function Menu(props) {
                 setSelected(["", "", "", "select"])
                 break;
             default:
-                setSelected(["select", "", "", ""])
+                setSelected(["", "", "", ""])
                 break;
         }
     }
@@ -44,28 +44,28 @@ function Menu(props) {
 
             <ul className="nav flex-column mb-0">
                 <li className="nav-item border-top" onClick={() => {setLocation("/")}}>
-                <a href="#" className={"nav-link text-white "+selected[0]}>
+                <span className={"nav-link text-white cursor-link hover-select "+selected[0]}>
                             <i className="fa mr-3 fa-fw"></i>
                             <strong className="h3">Mapas Públicos</strong>
-                        </a>
+                        </span>
                 </li>
                 <li className="nav-item border-top" onClick={() => {setLocation("/misMapas")}}>
-                <a href="#" className={"nav-link text-white "+selected[1]}>
+                <span className={"nav-link text-white cursor-link hover-select "+selected[1]}>
                             <i className="fa mr-3 fa-fw"></i>
                             <strong className="h3">Mis Mapas</strong>
-                        </a>
+                        </span>
                 </li>
                 <li className="nav-item border-top"  onClick={() => {setLocation("/perfil")}}>
-                <a href="#" className={"nav-link text-white "+selected[2]}>
+                <span className={"nav-link text-white cursor-link hover-select "+selected[2]}>
                             <i className="fa mr-3 fa-fw"></i>
                             <strong className="h3">Perfil</strong>
-                        </a>
+                        </span>
                 </li>
                 <li className="nav-item border-top border-bottom" onClick={() => {setLocation("/crear")}}>
-                <a href="#" className={"nav-link text-white "+selected[3]}>
+                <span className={"nav-link text-white cursor-link hover-select "+selected[3]}>
                             <i className="fa mr-3 fa-fw"></i>
                             <strong className="h3">Crear mapa</strong>
-                        </a>
+                        </span>
                 </li>
             </ul>
         </div>
